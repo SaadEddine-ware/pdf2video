@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+output/
+.git/
+.gitignore
+*.mp4
+*.md
+LICENSE
