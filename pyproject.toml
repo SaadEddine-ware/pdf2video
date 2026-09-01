@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf2video"
+version = "1.0.0"
+description = "Convert any PDF course into an animated Manim video"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "SaadEddine", email = "akuma0bot1@gmail.com"}
+]
+keywords = ["pdf", "video", "animation", "manim", "education", "motion-graphics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Video",
+]
+dependencies = [
+    "manim>=0.18.0",
+    "pdfplumber>=0.11.0",
+]
+
+[project.scripts]
+pdf2video = "pdf2video.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/SaadEddine-ware/pdf2video"
+Repository = "https://github.com/SaadEddine-ware/pdf2video"
+
+[tool.setuptools.packages.find]
+include = ["pdf2video*"]

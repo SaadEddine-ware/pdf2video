@@ -20,3 +20,8 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Build
+dist/
+build/
+*.egg-info/
