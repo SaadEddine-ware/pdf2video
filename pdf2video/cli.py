@@ -69,7 +69,14 @@ def main():
         sys.exit(1)
 
     basename = os.path.splitext(os.path.basename(args.pdf))[0]
-    output_path = args.output or f"output/{basename}.mp4"
+    if args.output:
+        if os.path.isdir(args.output):
+            output_path = os.path.join(args.output, f"{basename}.mp4")
+        else:
+            output_path = args.output
+            os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+    else:
+        output_path = f"output/{basename}.mp4"
     code_path = f"output/{basename}_manim.py"
 
     os.makedirs("output", exist_ok=True)
