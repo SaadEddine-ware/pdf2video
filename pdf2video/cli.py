@@ -76,7 +76,9 @@ def main():
             output_path = args.output
             os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     else:
-        output_path = f"output/{basename}.mp4"
+        output_dir = os.path.join(os.path.expanduser("~"), "Desktop")
+        os.makedirs(output_dir, exist_ok=True)
+        output_path = os.path.join(output_dir, f"{basename}.mp4")
     code_path = f"output/{basename}_manim.py"
 
     os.makedirs("output", exist_ok=True)
@@ -106,7 +108,11 @@ def main():
     # Step 3: Render
     print(f"[3/3] Rendering video...")
     render_video(code_path, output_path, quality=manim_quality)
-    print(f"\nDone! {output_path}")
+
+    abs_path = os.path.abspath(output_path)
+    print(f"\nDone!")
+    print(f"  Video: {abs_path}")
+    print(f"  Open:  xdg-open '{abs_path}'")
 
 
 if __name__ == "__main__":

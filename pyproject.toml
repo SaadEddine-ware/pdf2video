@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pdf2video"
-version = "1.0.1"
+version = "1.0.2"
 description = "Convert any PDF course into an animated Manim video"
 readme = "README.md"
 license = {text = "MIT"}
