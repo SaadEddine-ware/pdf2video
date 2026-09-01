@@ -13,17 +13,19 @@ flow. No static slides, no slide transitions. Real animation.
 ## Install
 
 ```bash
-pip install pdf2video
+curl -sSf https://raw.githubusercontent.com/SaadEddine-ware/pdf2video/main/install.sh | bash
 ```
 
-That's it. The `pdf2video` command is now available everywhere.
+This installs everything: system deps (ffmpeg, tesseract) + pdf2video from PyPI.
 
-### One-liner (with system dependencies)
-
-If you need ffmpeg, tesseract-ocr, and other system deps installed automatically:
+Or manually:
 
 ```bash
-curl -sSf https://raw.githubusercontent.com/SaadEddine-ware/pdf2video/main/install.sh | bash
+# Kali / Debian (externally managed Python)
+pip install --break-system-packages pdf2video
+
+# Other Linux / macOS / Windows
+pip install pdf2video
 ```
 
 ### System requirements (manual)

@@ -10,7 +10,7 @@ if ! command -v python3 &> /dev/null; then
     exit 1
 fi
 
-# Install system deps
+# Install system deps (Debian/Kali/Ubuntu)
 if command -v apt &> /dev/null; then
     echo "Installing system dependencies..."
     sudo apt-get update -qq
@@ -22,8 +22,8 @@ else
     echo "Make sure ffmpeg and tesseract-ocr are installed."
 fi
 
-# Install pdf2video
-pip3 install --user pdf2video
+# Install pdf2video (handles externally-managed-environment on Kali/Debian)
+pip3 install --user --break-system-packages pdf2video
 
 # Add to PATH if needed
 LOCAL_BIN="$HOME/.local/bin"
